@@ -15,7 +15,14 @@ CORS(app, origins=[
 ])
 
 DB_PATH = os.environ.get("NCWC_DB", "db.json")
+
+# NEW: สร้างโฟลเดอร์ให้ถ้ายังไม่มี
+dirpath = os.path.dirname(DB_PATH)
+if dirpath:
+    os.makedirs(dirpath, exist_ok=True)
+
 db = TinyDB(DB_PATH)
+
 T_USERS = db.table("users")
 T_TXNS = db.table("transactions")
 T_SAV = db.table("savings")
