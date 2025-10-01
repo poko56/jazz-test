@@ -1,0 +1,4 @@
+Flask==3.0.3
+TinyDB==4.8.2
+flask-cors==4.0.1
+gunicorn==21.2.0
